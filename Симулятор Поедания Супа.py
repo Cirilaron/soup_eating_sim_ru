@@ -4,7 +4,7 @@ import sys
 try:
     from pygame import mixer
 except:
-    print("You don't have pygame installed, musik and sounds will not play. To install it open a command line\nand type \'python -m pip install pygame\' on windows, and 'pip3 install pygame' on unix-like OSes")
+    print("Модуль pygame не установлен, музыки и звуков не будет. Чтобы установить модуль, открой консоль \nи пиши \'python -m pip install pygame\' на винде, или 'pip3 install pygame' на линуксе или маке")
     sleep(5)
 GotEnd1 = False
 GotEnd2 = False
@@ -104,16 +104,16 @@ _________________________________________________________
 |      | |                 ‾‾|‾‾‾|‾‾‾‾   	         |
 |      | |                   |   |			 |
 |                           			         |
-|  5oupman likes         5alt 3an makes it        	 |
-|   to soup                   salty 		         |
+|  скажи суп             соли суп 53 раза        	 |
+|   5 раз                           		         |
 |                             				 |
-|             Summon them today                          |
-|               Dont get poisoned!               	 |
+|             вызови их сегодня                          |
+|               не отравись!                     	 |
 |                             				 |
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 """
 soupman = """
-    Soupman
+    Супмэн
      _____
     ( . . )
      ( / )
@@ -126,7 +126,7 @@ ___   ‾|‾‾  __
       | |
 """
 saltman = """
-      Saltman
+      Сольмэн
         ____
        ( ' ' )
         ( ~ )     |
@@ -168,6 +168,8 @@ ___   ‾|‾‾  __                         |  |                       __    �
       | |           \                (      )              /        ‾‾|‾‾‾|‾‾‾‾
       | |            \                (    )              /           |   |
                      ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+(я не смог сделать такой текст русским, сорян)
+(перевод: СИМУЛЯТОР ПОЕДАНИЯ СУПА)
 """
 fork = """
 |   |    |
@@ -197,7 +199,6 @@ garlicsoup = False
 garlicbread = False
 saltiness = 0
 soupiness = 0
-nicenumbers = ["69", "420"]
 breakout = False
 hotel = "trivago"
 #actions
@@ -234,7 +235,7 @@ def save():
     f.close()
 def eatsoup():
     global soupeaten
-    print("You ate the soup.")
+    print("Ты съел суп.")
     mixer.Channel(1).play(mixer.Sound('sound/soup eating.wav'))
     sleep(3)
     soupeaten = True
@@ -258,20 +259,20 @@ def addsalt():
         global toomuchsalt
         global SpoonUpgrade
         global breakout
-        howmuch = int(input("How much shakes?\n"))
-        print("You added " + str(howmuch) + " salt shakes.")
+        howmuch = int(input("Сколько соли?\n"))
+        print("Ты добавил " + str(howmuch) + " соли.")
         mixer.Channel(1).play(mixer.Sound('sound/salt shake.wav'))
         sleep(5)
-        print("Now stir it")
+        print("Теперь перемешивай")
         stir = 0
-        while stir != "stir":
+        while stir != "перемешать":
             stir = input(">")
-            if stir == "stir":
-                print("You stirred the soup.")
+            if stir == "перемешать":
+                print("Ты перемешал суп.")
                 mixer.Channel(1).play(mixer.Sound('sound/stir.wav'))
                 sleep(6)
             else:
-                print("idiot just stir it")
+                print("просто напиши \"перемешать\"")
         saltiness += howmuch
         if saltiness > 9:
             souppoisoned = False
@@ -280,16 +281,16 @@ def addsalt():
         if ReleasedSaltman == False:
             if saltiness == 53:
                 if SpoonUpgrade:
-                    print("Your spoon becomes comically large and you want to bonk yourself with it, so you do.")
-                    print("A very salty (not in a bad way) individual comes out of your skull, which is now cracked.")
+                    print("Твоя ложка становится комически большой, так что ты себя бъёшь по голове ей.")
+                    print("Очень солёный индивидуал выходит из твоего черепа, который треснул.")
                     mixer.music.stop()
                     mixer.music.unload()
                     mixer.music.load("sound/Man of Salt.wav")
                     mixer.music.play(-1)
                     print(saltman)
-                    print("at last, i am free from the brainy™ and bony™ prison that is your mortal head")
+                    print("наконец-то, я освобожден из этой мозговой™ и костяной™ тюрьмы которой является твоя смертная голова")
                     if ReleasedSoupman == False:
-                        print("dont forget to also release soupman")
+                        print("не забудь освободить супмэна")
                     ReleasedSaltman = True
                     save()
                     sleep(8)
@@ -304,26 +305,25 @@ def addsalt():
                         breakout = True
                     else:
                         if forkysoup:
-                            print("dumbass your fork melted so we'll just give you ending 4 instead")
+                            print("идиот твоя вилка расплавилась так что мы просто дадим тебе концовку 4")
                             breakout = True
                         else:
-                            print("Your fork's pointy parts start glowing so you do the logical thing: stab yourself in the forehead with it.")
-                            print("You don't bleed from the wound, but a strange liquid that doesn't seem to be affected by gravity pours out of it and becomes a sphere.")
-                            print("The wound closes itself instantly after.")
+                            print("твоя вилка начинает светится так что ты делаешь логическое: колишь себя в лоб.")
+                            print("Никакой крови нет, но странная жидкость которая ломает законы физики вытекает и становится сферой.")
                             mixer.Channel(1).play(mixer.Sound('sound/pickup.wav'))
-                            print("(You have obtained the Salty Sphere! Saltman would probably like to see it.)")
+                            print("(Ты получил Сферу Соли! Возможно это то что Сольмэн забыл в твоей голове.)")
                             GotSaltSphere = True
                             save()
     except:
-        print("i asked for a number dumbass")
+        print("мне нужно число, идиот")
 def lookundertable():
     global soupnsalt
     global SpoonUpgrade
-    print("There is an engraving under the table. It says:")
+    print("Под столом написано:")
     if SpoonUpgrade:
         print(soupnsalt)
     else:
-        print("Salt you not, live you shall not.\nSalt you too much, live you not much.\nSalt you just right, live without fright.")
+        print("Не соли - не живи.\nСоли слишком много - тоже сдохни.\nСоли правильно - живи.")
 def clear():
     if os.name == "nt":
         _ = os.system("cls")
@@ -331,12 +331,12 @@ def clear():
         _ = os.system("clear")
 def eatsoupwithfork():
     global forkysoup
-    print("You attempt to eat soup with the fork. It melts, now you have a forky soup.")
+    print("Ты попытался съесть суп вилкой. Она расплавилась, теперь у тебя вилочный суп.")
     forkysoup = True
 def addgarlic():
     global garlicsoup
     mixer.Channel(1).play(mixer.Sound('sound/garlic.wav'))
-    print("You added garlic to the soup. You feel a sense of dread.")
+    print("Ты добавил чеснок в суп. Что-то не так.")
     mixer.music.stop()
     mixer.music.unload()
     garlicsoup = True
@@ -344,35 +344,31 @@ def addgarlic():
 def addbread():
     global souppoisoned
     global toomuchsalt
-    print("You added bread to the soup.")
+    print("Ты добавил хлеб в суп.")
     if souppoisoned:
-        print("It dissolved from the poison")
+        print("Он растворился от отравы")
     elif toomuchsalt:
-        print("It dissolved from the salt")
+        print("Он растворился от соли")
     else:
-        print("This is a major improvement.")
-    print("The slice of bread on the table reappeared.")
+        print("Это большое улучшение.")
+    print("На столе появился ещё один кусок хлеба.")
 def eatbread():
-    print("You ate the bread. You enjoyed it, but other than that and it reappearing on the table, nothing happened.")
+    print("Ты съел хлеб. Было вкусно, но ничего не произошло, кроме того что на столе появился ещё один кусок хлеба.")
 def eatgarlic():
-    print("You ate the garlic. It tasted like it should be put on bread, not eaten raw. The clove of garlic on the table reappeared.")
+    print("Ты съел чеснок. На вкус как что-то которое надо есть на хлебе, а не просто так. На столе появился ещё один кусок чеснока.")
 def makegarlicbread():
     global garlicbread
-    print("You repeatedly slammed the slice of bread with the clove of garlic. Magically, they turned into garlic bread.")
+    print("Ты магически соединил чеснок и хлеб в чесночный хлеб.")
     mixer.Channel(1).play(mixer.Sound('sound/pickup.wav'))
     garlicbread = True
 def eatgarlicbread():
     global garlicbread
     if garlicbread:
-        print("It tastes like heaven. It feels like heaven. You feel like you are in heaven. \nActually, while enjoying the garlic bread, you transcended into the Eternal Sea (which is heaven) without dying.")
-        print("You meet Crab God.")
-        print("\"Oh, it's you again. Someone wanted to talk to you.\", he says, as he transfers you to two crabs.")
-        print("The crabs are the devs of this game. I, Cirilaron, the lead programmer, and Domncostel, the lead art designer and sound composer.")
-        print("We tell you about the planned updates: Bepis update and kitchen minigame")
-        print("After that you return back to the table. This is not an ending.")
+        print("ммммммммммммммммм вкусна")
+        print("Ты превратился в микроволновку (шучу).")
         garlicbread = False
     else:
-        print("you don't have any, idiot")
+        print("У тебя нет чесночного хлеба.")
 #endings
 def deathbypoison():
     global GotEnd1
@@ -393,9 +389,8 @@ def deathbypoison():
     mixer.music.load("sound/cruel soup cruel life.wav")
     mixer.music.play(-1)
     mixer.Channel(1).play(mixer.Sound('sound/dying.wav'))
-    print("U were dumb, the soup was poisoned, like all soup is, so u ded now")
-    print("You ascend into the Eternal Sea, and there you meet Crab God and become a crab and rave.")
-    print("ENDING 1/?: POISON DEATH")
+    print("Суп был отравлен, как и все другие супы, так что ты сдох")
+    print("КОНЦОВКА 1/?: ОТРАВА")
     if GotEnd1 == False:
         GotEnd1 = True
         save()
@@ -417,8 +412,8 @@ def saltylife():
     mixer.music.unload()
     mixer.music.load("sound/Alive but salty.wav")
     mixer.music.play(-1)
-    print("The soup was poisoned, like all soup is. HOWEVER, the magik power of salt neutralized poison, so u still alive.")
-    print("ENDING 2/?: ALIVE BUT SALTY")
+    print("Суп был отравлен, как и все другие супы. НО, магическая сила соли нейтрализировала отраву, так что ты жив.")
+    print("КОНЦОВКА 2/?: ЖИВ НО СОЛЁН")
     if GotEnd2 == False:
         GotEnd2 = True
         save()
@@ -441,12 +436,8 @@ def toosalty():
     mixer.music.load("sound/Life is salty.wav")
     mixer.music.play(-1)
     mixer.Channel(1).play(mixer.Sound('sound/dying.wav'))
-    print("You added too much salt. The original poison was neutralized, but you died of dehydration/sodium poisoning/whatever")
-    res = [sub for sub in nicenumbers if sub in str(saltiness)]
-    if res:
-        print("nice salt amount btw")
-    print("You ascend into the Eternal Sea, and there you meet Crab God and become a crab and rave.")
-    print("ENDING 3/?: TOO SALTY")
+    print("Ты добавил слишком много соли. Отрава супа была нейтрализирована, но ты сдох от дегидрации/отравы натрием/и тд.")
+    print("КОНЦОВКА 3/?: СЛИШКОМ СОЛЁНО")
     if GotEnd3 == False:
         GotEnd3 = True
         save()
@@ -466,8 +457,8 @@ def ascend():
     global GotGarlic
     if ReleasedSaltman:
         if ReleasedSoupman:
-            print("Having broken the loop of soup, You ascend into a safe place with the help of Saltman and Soupman's powers.")
-            print("ENDING 4/?: LOOP BROKEN")
+            print("Сломав круговорот супа, ты телепортируешся в безопасное место с помощью сил Сольмэна и Супмэна.")
+            print("КОНЦОВКА 4/?: КРУГОВОРОТ СЛОМАН")
             if GotEnd4 == False:
                 GotEnd4 = True
                 save()
@@ -490,9 +481,8 @@ def silverpoisoning():
     mixer.music.load("sound/A Silver End.wav")
     mixer.music.play(-1)
     mixer.Channel(1).play(mixer.Sound('sound/dying.wav'))
-    print("You died of silver poisoning because you ate the fork, which got mixed in the soup.")
-    print("You ascend into the Eternal Sea, and there you meet Crab God and become a crab and rave.")
-    print("ENDING 5/?: Forky Death")
+    print("Ты умер от отравы серебром, т.к. ты съел вилку которая смешалась с супом.")
+    print("Концовка 5/?: ВИЛОЧНАЯ СМЕРТЬ")
     if GotEnd5 == False:
         GotEnd5 = True
         save()
@@ -513,32 +503,30 @@ def necksnap():
     mixer.music.load("sound/No.wav")
     mixer.music.play(-1)
     mixer.Channel(1).play(mixer.Sound('sound/neck snapping.wav'))
-    print("Suddenly, i (the lead programmer, Cirilaron) appear behind you and snap your neck because i disagree with what you just did.")
-    print("You ascend into the Eternal Sea, and there you meet Crab God and become a crab and rave.")
-    print("ENDING 6/?: NECK SNAP")
+    print("Внезапно, я (главный програмист этой игры, Сириларон) появляюсь сзади тебя и ломаю тебе шею потому-что я не согласен с тем что ты только что сделал.")
+    print("Концовка 6/?: СЛОМАННАЯ ШЕЯ")
     if GotEnd6 == False:
         GotEnd6 = True
         save()
 
 #dicts
 soupyanswers = {
-"eat soup": eatsoup,
-"eat": eatsoup,
-"eat the soup": eatsoup,
-"add salt": addsalt,
-"look under table": lookundertable
+"съесть суп": eatsoup,
+"съесть": eatsoup,
+"добавить соль": addsalt,
+"посмотреть под стол": lookundertable
 }
 if GotFork:
-    soupyanswers["eat soup with fork"] = eatsoupwithfork
+    soupyanswers["съесть суп вилкой"] = eatsoupwithfork
 if GotBread:
-    soupyanswers["add bread"] = addbread
-    soupyanswers["eat bread"] = eatbread
+    soupyanswers["добавить хлеб"] = addbread
+    soupyanswers["съесть хлеб"] = eatbread
 if GotGarlic:
-    soupyanswers["add garlic"] = addgarlic
-    soupyanswers["eat garlic"] = eatgarlic
+    soupyanswers["добавить чеснок"] = addgarlic
+    soupyanswers["съесть чеснок"] = eatgarlic
 if GotBread and GotGarlic:
-    soupyanswers["make garlic bread"] = makegarlicbread
-    soupyanswers["eat garlic bread"] = eatgarlicbread
+    soupyanswers["сделать чесночный хлеб"] = makegarlicbread
+    soupyanswers["съесть чесночный хлеб"] = eatgarlicbread
 #game
 def loopofsoup():
     global soup
@@ -573,54 +561,54 @@ def loopofsoup():
     mixer.init()
     mixer.music.load('sound/normal days.wav')
     mixer.music.play(-1)
-    print("You find yourself surrounded by invisible walls, in a dark void™. You are sitting on a chair, a bowl of soup on the \ntable in front of you.")
+    print("Ты окружён невидимыми стенами, в тёмной пустоте™. Ты сидишь на стуле, на столе впереди тебя тарелка супа.")
     print(soup)
-    print("Next to it is a salt shaker.")
+    print("Рядом с ней соль.")
     print(salt)
-    print("There is also a spoon.")
+    print("Ещё ложка.")
     if SpoonUpgrade:
-        print("It seems to be glowing faintly.")
+        print("Она немного светится.")
         if GotEnd4 == False:
-            print("You feel the urge to look under the table.")
+            print("Ты чувствуешь нужду посмотреть под стол.")
     print(spoon)
     if GotFork:
-        print("The fork you got from Saltman and Soupman is also here.")
+        print("Вилка тоже тут.")
         print(fork)
     if GotGarlic:
-        print("You have some garlic in your left pocket, so you put it on the table.")
+        print("И чеснок.")
     if GotBread:
-        print("You have some bread in your right pocket, so you put it on the table.")
+        print("И хлеб.")
     #loop of soup
     while soupeaten == False:
-        print("What would you like to do?")
-        options = "eat soup, add salt, soup, look under table"
+        print("Что ты хочешь сделать?")
+        options = "съесть суп, добавить соль, суп, посмотреть под стол"
         if GotFork:
-            options = options + ", eat soup with fork"
+            options = options + ", съесть суп вилкой"
         if GotBread:
-            options = options + ", add bread, eat bread"
+            options = options + ", добавить хлеб, съесть хлеб"
         if GotGarlic:
-            options = options + ", add garlic, eat garlic"
+            options = options + ", добавить чеснок, съесть чеснок"
         if GotBread and GotGarlic:
-            options = options + ", make garlic bread, eat garlic bread"
-        print("Your options: " + options)
+            options = options + ", сделать чесночный хлеб, съесть чесночный хлеб"
+        print("Действия: " + options)
         answer = input(">")
         if answer not in soupyanswers:
-            if answer == "soup":
+            if answer == "суп":
                 print("s̸̟̄̕o̶̤̬̅u̸͙͍̾p̵̫͂̚")
                 soupiness += 1
                 if ReleasedSoupman == False:
                     if soupiness == 5:
                         if SpoonUpgrade == True:
-                            print("Your spoon becomes comically large and you want to bonk yourself with it, so you do.")
-                            print("A very soupy individual comes out of your skull, which is now cracked.")
+                            print("Твоя ложка становится комически большой, так что ты себя бъёшь по голове ей.")
+                            print("Очень супный индивидуал выходит из твоего черепа, который треснул.")
                             mixer.music.stop()
                             mixer.music.unload()
                             mixer.music.load("sound/Can you eat him with a spoon.wav")
                             mixer.music.play(-1)
                             print(soupman)
-                            print("Finally, the cranial jail that is your mortal skull has been broken.")
+                            print("Наконец, краниальная тюрьма которой является твой череп сломана.")
                             if ReleasedSaltman == False:
-                                print("dont forget to also release saltman")
+                                print("не забудь освободить сольмэна")
                             ReleasedSoupman = True
                             save()
                             sleep(8)
@@ -635,19 +623,18 @@ def loopofsoup():
                                 breakout = True
                             else:
                                 if forkysoup:
-                                    print("dumbass your fork melted so we'll just get you ending 4 instead")
+                                    print("идиот твоя вилка расплавилась так что мы просто дадим тебе концовку 4")
                                     breakout = True
                                 else:
-                                    print("Your fork's pointy parts start glowing so you do the logical thing: stab yourself in the forehead with it.")
-                                    print("You don't bleed from the wound, but a strange liquid that doesn't seem to be affected by gravity pours out of it and becomes a sphere.")
-                                    print("The wound closes itself instantly after.")
+                                    print("твоя вилка начинает светится так что ты делаешь логическое: колишь себя в лоб.")
+                                    print("Никакой крови нет, но странная жидкость которая ломает законы физики вытекает и становится сферой.")
                                     mixer.Channel(1).play(mixer.Sound('sound/pickup.wav'))
-                                    print("(You have obtained the Soupy Sphere! Soupman would probably like to see it.)")
+                                    print("(Ты получил Сферу Супа! Возможно это то что Супмэн забыл в твоей голове.)")
                                     GotSoupSphere = True
                                     save()
 
             else:
-                print("not an option dumdum")
+                print("это не в списке действий")
         else:
             action = soupyanswers[answer]
             action()
@@ -663,7 +650,7 @@ def loopofsoup():
             mixer.music.unload()
             mixer.music.load("sound/Salty Soup.wav")
             mixer.music.play(-1)
-            print("The powers of Saltman and Soupman have broken you out of the Loop of Soup!")
+            print("Силы Сольмэна и Супмэна освобождают тебя из круговорота супа!")
             break
     #the moment of truth
     if soupeaten:
@@ -693,11 +680,11 @@ def loopofsoup():
         else:
             if ReleasedSaltman:
                 if ReleasedSoupman:
-                    print("Type \"ascend\" to ascend.")
+                    print("Напиши \"телепорт\" чтобы телепортироватся.")
                     ascension = 0
-                    while ascension != "ascend":
+                    while ascension != "телепорт":
                         ascension = input(">")
-                        if ascension == "ascend":
+                        if ascension == "телепорт":
                             ascend()
                             sleep(10)
                             clear()
@@ -756,80 +743,80 @@ def mainmenu():
     print(logo)
     command = 0
     while True:
-        print("What would you like to do? Commands: start game, view endings, kitchen, exit")
+        print("Что ты хочешь сделать? Действия: начать игру, посмотреть концовки, кухня, выйти")
         command = input(">")
-        if command == "start game":
+        if command == "начать игру":
             break
-        elif command == "view endings":
-            print("Ending 1: " + str(GotEnd1))
-            print("Ending 2: " + str(GotEnd2))
-            print("Ending 3: " + str(GotEnd3))
-            print("Ending 4: " + str(GotEnd4))
-            print("Ending 5: " + str(GotEnd5))
-            print("Ending 6: " + str(GotEnd6))
-            print("More endings coming soon™")
-        elif command == "kitchen":
-            print("You enter the kitchen. You cannot interact with it, for now. Soupman and Saltman are also here.")
+        elif command == "посмотреть концовки":
+            print("Концовка 1: " + str(GotEnd1))
+            print("Концовка 2: " + str(GotEnd2))
+            print("Концовка 3: " + str(GotEnd3))
+            print("Концовка 4: " + str(GotEnd4))
+            print("Концовка 5: " + str(GotEnd5))
+            print("Концовка 6: " + str(GotEnd6))
+            print("Больше концовок будет скоро™")
+        elif command == "кухня":
+            print("Ты входишь в кухню. Пока что, ты не можешь с ней интерактировать. Супмэн и Сольмэн тоже здесь.")
             while True:
-                print("What would you like to do? Commands: leave kitchen, talk")
+                print("Что ты хочешь сделать? Действия: выйти из кухни, говорить")
                 kommand = input(">")
-                if kommand == "leave kitchen":
+                if kommand == "выйти из кухни":
                     break
-                elif kommand == "talk":
+                elif kommand == "говорить":
                     if GotFork:
                         if GotSaltSphere:
                             if GotBread:
-                                print("It seems Saltman is too busy to talk")
+                                print("Похоже, Сольмэн слишком занят.")
                             else:
-                                print("Saltman: Hey, there it is! The sphere of salt! Here, have this piece of bread as a thanks.")
+                                print("Сольмэн: Вот она, Сфера Соли! Вот, держи хлеб.")
                                 sleep(3)
                                 mixer.Channel(1).play(mixer.Sound('sound/pickup.wav'))
-                                print("You have obtained the bread!")
+                                print("Ты получил хлеб!")
                                 GotBread = True
-                                soupyanswers["add bread"] = addbread
-                                soupyanswers["eat bread"] = eatbread
+                                soupyanswers["добавить хлеб"] = addbread
+                                soupyanswers["съесть хлеб"] = eatbread
                                 save()
                                 sleep(3)
                         else:
-                            print("Saltman: Add 53 salt shakes to the soup.")
+                            print("Сольмэн: Добавь 53 соли в суп.")
                         if GotSoupSphere:
                             if GotGarlic:
-                                print("It seems Soupman is too busy to talk.")
+                                print("Похоже, Супмэн слишком занят.")
                             else:
-                                print("Soupman: The sphere of soup! Can't believe i forgot it. Here, have this garlic clove as a thanks.")
+                                print("Супмэн: Сфера супа! Не могу поверить что я её там забыл. Вот, держи чеснок.")
                                 sleep(3)
                                 mixer.Channel(1).play(mixer.Sound('sound/pickup.wav'))
-                                print("You have obtained the garlic!")
+                                print("Ты получил чеснок!")
                                 GotGarlic = True
-                                soupyanswers["add garlic"] = addgarlic
-                                soupyanswers["eat garlic"] = eatgarlic
+                                soupyanswers["добавить чеснок"] = addgarlic
+                                soupyanswers["съесть чеснок"] = eatgarlic
                                 save()
                                 sleep(3)
                         else:
-                            print("Soupman: Say soup 5 times.")
+                            print("Супмэн: Скажи суп 5 раз.")
                     else:
-                        print("Saltman: Hey, we are currenty making this kitchen usable to mortals")
+                        print("Сольмэн: Мы делаем эту кухню используемой смертными.")
                         sleep(3)
-                        print("Soupman: We forgot some stuff we need in your head tho")
+                        print("Супмэн: Но мы забыли кое-что в твоей голове.")
                         sleep(3)
-                        print("Saltman: Can you do the stuff you did to summon us again?")
+                        print("Сольмэн: Можешь сделать то что сделал чтобы нас вызвать?")
                         sleep(3)
-                        print("Soupman: But with this fork.")
+                        print("Soupman: Но этой вилкой.")
                         sleep(1)
                         mixer.Channel(1).play(mixer.Sound('sound/pickup.wav'))
-                        print("You have obtained the fork!")
+                        print("Ты получил вилку!")
                         GotFork = True
-                        soupyanswers["eat soup with fork"] = eatsoupwithfork
+                        soupyanswers["съесть суп вилкой"] = eatsoupwithfork
                         save()
                         sleep(3)
                 if GotBread and GotGarlic:
-                    soupyanswers["make garlic bread"] = makegarlicbread
-                    soupyanswers["eat garlic bread"] = eatgarlicbread
-        elif command == "exit":
+                    soupyanswers["сделать чесночный хлеб"] = makegarlicbread
+                    soupyanswers["съесть чесночный хлеб"] = eatgarlicbread
+        elif command == "выйти":
             break
         else:
-            print("This isnt a command")
-    if command == "start game":
+            print("Это не действие")
+    if command == "начать игру":
         loopofsoup()
 #start game
 if GotEnd4:

@@ -1,5 +1,5 @@
 # Soup Eating Simulator™*
-Very epic game where you eat soup and die... or maybe you dont.
-Escape the Loop of Soup, fight the Soup Poison Man (not yet implemented) and make soup everywhere edible! (not yet implemented)
+Очень эпическая игра где ты ешь суп и подыхаешь... или нет.
+Жри суп, соли суп, освобождай Супмэна и Сольмэна!
 
-* trademark not yet implemented
+убейте меня
